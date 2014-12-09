@@ -1,0 +1,466 @@
+{
+  "extractors": [
+    {
+      "condition_type": "string",
+      "condition_value": "Completed block ownership calculation",
+      "converters": [
+        {
+          "config": {},
+          "type": "numeric"
+        }
+      ],
+      "cursor_strategy": "copy",
+      "extractor_config": {
+        "regex_value": "^.*took (.*) ms."
+      },
+      "extractor_type": "regex",
+      "order": 0,
+      "source_field": "message",
+      "target_field": "blockOwnershipCalculation",
+      "title": "NetAPP: blockOwnershipCalculation"
+    },
+    {
+      "condition_type": "string",
+      "condition_value": "Completed block ownership calculation",
+      "converters": [],
+      "cursor_strategy": "copy",
+      "extractor_config": {
+        "regex_value": "^.*volume (.+)\\. The"
+      },
+      "extractor_type": "regex",
+      "order": 0,
+      "source_field": "message",
+      "target_field": "blockOwnershipVolume",
+      "title": "NetAPP: blockOwnershipVolume"
+    },
+    {
+      "condition_type": "string",
+      "condition_value": "aggregate_name",
+      "converters": [],
+      "cursor_strategy": "copy",
+      "extractor_config": {
+        "regex_value": "^.*aggregate_name=\"(.*?)\""
+      },
+      "extractor_type": "regex",
+      "order": 0,
+      "source_field": "message",
+      "target_field": "aggregate_name",
+      "title": "NetApp: Aggregate Name"
+    },
+    {
+      "condition_type": "string",
+      "condition_value": "aggregate_type",
+      "converters": [],
+      "cursor_strategy": "copy",
+      "extractor_config": {
+        "regex_value": "^.*aggregate_type=\"(.*?)\""
+      },
+      "extractor_type": "regex",
+      "order": 0,
+      "source_field": "message",
+      "target_field": "aggregate_type",
+      "title": "NetApp: Aggregate Type"
+    },
+    {
+      "condition_type": "string",
+      "condition_value": "aggregate_uuid",
+      "converters": [],
+      "cursor_strategy": "copy",
+      "extractor_config": {
+        "regex_value": "^.*aggregate_uuid=\"(.*?)\""
+      },
+      "extractor_type": "regex",
+      "order": 0,
+      "source_field": "message",
+      "target_field": "aggregate_uuid",
+      "title": "NetApp: Aggregate UUID"
+    },
+    {
+      "condition_type": "string",
+      "condition_value": "home_owner_id",
+      "converters": [],
+      "cursor_strategy": "copy",
+      "extractor_config": {
+        "regex_value": "^.*home_owner_id=\"(\\d[0-9].*?)\""
+      },
+      "extractor_type": "regex",
+      "order": 0,
+      "source_field": "message",
+      "target_field": "home_owner_id",
+      "title": "NetApp: Home Owner ID"
+    },
+    {
+      "condition_type": "string",
+      "condition_value": "home_owner_name",
+      "converters": [],
+      "cursor_strategy": "copy",
+      "extractor_config": {
+        "regex_value": "^.*home_owner_name=\"(.*?)\""
+      },
+      "extractor_type": "regex",
+      "order": 0,
+      "source_field": "message",
+      "target_field": "home_owner_name",
+      "title": "NetApp: Home Owner Name"
+    },
+    {
+      "condition_type": "string",
+      "condition_value": "CP_count",
+      "converters": [
+        {
+          "config": {},
+          "type": "numeric"
+        }
+      ],
+      "cursor_strategy": "copy",
+      "extractor_config": {
+        "regex_value": "^.*CP_count=\"(\\d[0-9].*?)\""
+      },
+      "extractor_type": "regex",
+      "order": 0,
+      "source_field": "message",
+      "target_field": "CP_count",
+      "title": "NetApp: CP count"
+    },
+    {
+      "condition_type": "string",
+      "condition_value": "CSM updated blade to IPv4 mapping",
+      "converters": [],
+      "cursor_strategy": "copy",
+      "extractor_config": {
+        "regex_value": "^.*cluster (.*),"
+      },
+      "extractor_type": "regex",
+      "order": 0,
+      "source_field": "message",
+      "target_field": "CSMMappingCluster",
+      "title": "NetApp: CSM Mapping Cluster"
+    },
+    {
+      "condition_type": "string",
+      "condition_value": "CSM updated blade to IPv4",
+      "converters": [],
+      "cursor_strategy": "copy",
+      "extractor_config": {
+        "regex_value": "^.*blade (.*) to"
+      },
+      "extractor_type": "regex",
+      "order": 0,
+      "source_field": "message",
+      "target_field": "CSMMappingBlade",
+      "title": "NetApp: CSM Mapping Blade"
+    },
+    {
+      "condition_type": "string",
+      "condition_value": "CSM updated blade to IPv4",
+      "converters": [],
+      "cursor_strategy": "copy",
+      "extractor_config": {
+        "regex_value": "^.* address (.*) and"
+      },
+      "extractor_type": "regex",
+      "order": 0,
+      "source_field": "message",
+      "target_field": "CSMMappingIP",
+      "title": "NetApp: CSM Mapping IP Address"
+    },
+    {
+      "condition_type": "string",
+      "condition_value": "CSM updated blade to IPv4",
+      "converters": [
+        {
+          "config": {},
+          "type": "numeric"
+        }
+      ],
+      "cursor_strategy": "copy",
+      "extractor_config": {
+        "regex_value": "^.* ID: (.*)\\."
+      },
+      "extractor_type": "regex",
+      "order": 0,
+      "source_field": "message",
+      "target_field": "CSMMappingDevice",
+      "title": "NetApp: CSM Mapping Device"
+    },
+    {
+      "condition_type": "string",
+      "condition_value": "SIS change logging metafile for volume",
+      "converters": [],
+      "cursor_strategy": "copy",
+      "extractor_config": {
+        "regex_value": "^.*volume (.*?)\\@"
+      },
+      "extractor_type": "regex",
+      "order": 0,
+      "source_field": "message",
+      "target_field": "SISVolume",
+      "title": "NetAPP: SIS Volume"
+    },
+    {
+      "condition_type": "string",
+      "condition_value": "SIS change logging metafile for volume",
+      "converters": [],
+      "cursor_strategy": "copy",
+      "extractor_config": {
+        "regex_value": "^.*vserver:(.*?) is"
+      },
+      "extractor_type": "regex",
+      "order": 0,
+      "source_field": "message",
+      "target_field": "SISVserver",
+      "title": "NetAPP: SIS VServer"
+    },
+    {
+      "condition_type": "string",
+      "condition_value": "SIS change logging metafile for volume",
+      "converters": [],
+      "cursor_strategy": "copy",
+      "extractor_config": {
+        "regex_value": "^.*is (.*)\\."
+      },
+      "extractor_type": "regex",
+      "order": 0,
+      "source_field": "message",
+      "target_field": "SISVolumeState",
+      "title": "NetAPP: SIS Volume State"
+    },
+    {
+      "condition_type": "string",
+      "condition_value": "kern.uptime.filer:info",
+      "converters": [
+        {
+          "config": {},
+          "type": "numeric"
+        }
+      ],
+      "cursor_strategy": "copy",
+      "extractor_config": {
+        "regex_value": "^.* up (\\d[0-9].*?).*"
+      },
+      "extractor_type": "regex",
+      "order": 0,
+      "source_field": "message",
+      "target_field": "kernelUpDays",
+      "title": "NetAPP: Kernel Uptime"
+    },
+    {
+      "condition_type": "string",
+      "condition_value": "kern.uptime.filer:info",
+      "converters": [
+        {
+          "config": {},
+          "type": "numeric"
+        }
+      ],
+      "cursor_strategy": "copy",
+      "extractor_config": {
+        "regex_value": "^.*days, \\d[0-9]\\:\\d[0-9] (.*) NFS"
+      },
+      "extractor_type": "regex",
+      "order": 0,
+      "source_field": "message",
+      "target_field": "kernelNFSops",
+      "title": "NetAPP: Kernel NFS ops"
+    },
+    {
+      "condition_type": "string",
+      "condition_value": "kern.uptime.filer:info",
+      "converters": [
+        {
+          "config": {},
+          "type": "numeric"
+        }
+      ],
+      "cursor_strategy": "copy",
+      "extractor_config": {
+        "regex_value": "^.*NFS ops, (.*) CIFS"
+      },
+      "extractor_type": "regex",
+      "order": 0,
+      "source_field": "message",
+      "target_field": "kernelCIFSops",
+      "title": "NetAPP: Kernel CIFS ops"
+    },
+    {
+      "condition_type": "string",
+      "condition_value": "kern.uptime.filer:info",
+      "converters": [
+        {
+          "config": {},
+          "type": "numeric"
+        }
+      ],
+      "cursor_strategy": "copy",
+      "extractor_config": {
+        "regex_value": "^.*CIFS ops, (.*) HTTP"
+      },
+      "extractor_type": "regex",
+      "order": 0,
+      "source_field": "message",
+      "target_field": "kernelHTTPops",
+      "title": "NetAPP: Kernel HTTP ops"
+    },
+    {
+      "condition_type": "string",
+      "condition_value": "kern.uptime.filer:info",
+      "converters": [
+        {
+          "config": {},
+          "type": "numeric"
+        }
+      ],
+      "cursor_strategy": "copy",
+      "extractor_config": {
+        "regex_value": "^.* HTTP ops, (.*) FCP"
+      },
+      "extractor_type": "regex",
+      "order": 0,
+      "source_field": "message",
+      "target_field": "kernelFCPops",
+      "title": "NetAPP: Kernel FCP ops"
+    },
+    {
+      "condition_type": "string",
+      "condition_value": "kern.uptime.filer:info",
+      "converters": [
+        {
+          "config": {},
+          "type": "numeric"
+        }
+      ],
+      "cursor_strategy": "copy",
+      "extractor_config": {
+        "regex_value": "^.* FCP ops, (.*) iSCSI"
+      },
+      "extractor_type": "regex",
+      "order": 0,
+      "source_field": "message",
+      "target_field": "kerneliSCSIops",
+      "title": "NetAPP: Kernel iSCSI ops"
+    },
+    {
+      "condition_type": "string",
+      "condition_value": "Automatic shrink of volume",
+      "converters": [],
+      "cursor_strategy": "copy",
+      "extractor_config": {
+        "regex_value": "^.*volume '(.*)\\@"
+      },
+      "extractor_type": "regex",
+      "order": 0,
+      "source_field": "message",
+      "target_field": "waflShrinkVolume",
+      "title": "NetAPP: WAFL shrink volume"
+    },
+    {
+      "condition_type": "string",
+      "condition_value": "Automatic shrink of volume",
+      "converters": [],
+      "cursor_strategy": "copy",
+      "extractor_config": {
+        "regex_value": "^.*vserver:(.*?)'"
+      },
+      "extractor_type": "regex",
+      "order": 0,
+      "source_field": "message",
+      "target_field": "waflShrinkVserver",
+      "title": "NetAPP: WAFL shrink vServer"
+    },
+    {
+      "condition_type": "string",
+      "condition_value": "Automatic shrink of volume",
+      "converters": [
+        {
+          "config": {},
+          "type": "numeric"
+        }
+      ],
+      "cursor_strategy": "copy",
+      "extractor_config": {
+        "regex_value": "^.*by (\\d[0-9]{0,9}\\.\\d[0-9]{0,9}.*?)"
+      },
+      "extractor_type": "regex",
+      "order": 0,
+      "source_field": "message",
+      "target_field": "waflShrinkSize",
+      "title": "NetAPP: WAFL shrink Size"
+    },
+    {
+      "condition_type": "string",
+      "condition_value": "Automatic shrink of volume",
+      "converters": [],
+      "cursor_strategy": "copy",
+      "extractor_config": {
+        "regex_value": "^.*by \\d[0-9]{0,9}\\.\\d[0-9]{0,9}(.*) complete"
+      },
+      "extractor_type": "regex",
+      "order": 0,
+      "source_field": "message",
+      "target_field": "waflShrinkUnit",
+      "title": "NetAPP: WAFL shrink Unit"
+    },
+    {
+      "condition_type": "string",
+      "condition_value": "Automatic grow of volume",
+      "converters": [],
+      "cursor_strategy": "copy",
+      "extractor_config": {
+        "regex_value": "^.*volume '(.*)\\@"
+      },
+      "extractor_type": "regex",
+      "order": 0,
+      "source_field": "message",
+      "target_field": "waflGrowVolume",
+      "title": "NetAPP: WAFL grow volume"
+    },
+    {
+      "condition_type": "string",
+      "condition_value": "Automatic grow of volume",
+      "converters": [],
+      "cursor_strategy": "copy",
+      "extractor_config": {
+        "regex_value": "^.*vserver:(.*)'"
+      },
+      "extractor_type": "regex",
+      "order": 0,
+      "source_field": "message",
+      "target_field": "waflGrowVserver",
+      "title": "NetAPP: WAFL grow vServer"
+    },
+    {
+      "condition_type": "string",
+      "condition_value": "Automatic grow of volume ",
+      "converters": [],
+      "cursor_strategy": "copy",
+      "extractor_config": {
+        "regex_value": "^.*by \\d[0-9]{0,9}\\.\\d[0-9]{0,9}(.*) complete"
+      },
+      "extractor_type": "regex",
+      "order": 0,
+      "source_field": "message",
+      "target_field": "waflGrowUnit",
+      "title": "NetAPP: WAFL grow Unit"
+    },
+    {
+      "condition_type": "string",
+      "condition_value": "Automatic grow of volume",
+      "converters": [
+        {
+          "config": {},
+          "type": "numeric"
+        }
+      ],
+      "cursor_strategy": "copy",
+      "extractor_config": {
+        "regex_value": "^.*by (\\d[0-9]{0,9}\\.\\d[0-9]{0,9}.*?)"
+      },
+      "extractor_type": "regex",
+      "order": 0,
+      "source_field": "message",
+      "target_field": "waflGrowSize",
+      "title": "NetAPP: WAFL grow Size"
+    }
+  ],
+  "version": "0.91.1"
+}
