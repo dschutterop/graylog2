@@ -1,0 +1,127 @@
+{
+  "extractors": [
+    {
+      "condition_type": "regex",
+      "condition_value": "^.*(Section for VMware ESX)",
+      "converters": [],
+      "cursor_strategy": "copy",
+      "extractor_config": {
+        "regex_value": "^.*version=(\\d[0-9]{0,9}\\.\\d[0-9]{0,9}\\.\\d[0-9]{0,9})"
+      },
+      "extractor_type": "regex",
+      "order": 0,
+      "source_field": "message",
+      "target_field": "vmWareVersion",
+      "title": "vmWareVersion"
+    },
+    {
+      "condition_type": "regex",
+      "condition_value": "^.*(Section for VMware ESX)",
+      "converters": [
+        {
+          "config": {},
+          "type": "numeric"
+        }
+      ],
+      "cursor_strategy": "copy",
+      "extractor_config": {
+        "regex_value": "^.*build=(\\d[0-9]{0,9})"
+      },
+      "extractor_type": "regex",
+      "order": 0,
+      "source_field": "message",
+      "target_field": "vmWareBuild",
+      "title": "vmWare: vmWareBuild"
+    },
+    {
+      "condition_type": "regex",
+      "condition_value": "^.*(ifup:.+ device:.+)",
+      "converters": [],
+      "cursor_strategy": "copy",
+      "extractor_config": {
+        "regex_value": "^.*ifup: (.+) device:"
+      },
+      "extractor_type": "regex",
+      "order": 0,
+      "source_field": "message",
+      "target_field": "vmWareIfup",
+      "title": "vmWareIfUp"
+    },
+    {
+      "condition_type": "regex",
+      "condition_value": "^.*(ifup:.+ device:.*)",
+      "converters": [],
+      "cursor_strategy": "copy",
+      "extractor_config": {
+        "regex_value": "^.*device: (.+)$"
+      },
+      "extractor_type": "regex",
+      "order": 0,
+      "source_field": "message",
+      "target_field": "vmWareIfDevice",
+      "title": "vmWareIfDevice"
+    },
+    {
+      "condition_type": "regex",
+      "condition_value": "^.*(VMotion:.* pages)",
+      "converters": [
+        {
+          "config": {},
+          "type": "numeric"
+        }
+      ],
+      "cursor_strategy": "copy",
+      "extractor_config": {
+        "regex_value": "^.*~(\\d[0-9]{0,9}\\.\\d[0-9]{0,9})"
+      },
+      "extractor_type": "regex",
+      "order": 0,
+      "source_field": "message",
+      "target_field": "vMotionBandwidth",
+      "title": "vMotionBandwidth"
+    },
+    {
+      "condition_type": "regex",
+      "condition_value": "^.*(Setting VMOTION info:)",
+      "converters": [],
+      "cursor_strategy": "copy",
+      "extractor_config": {
+        "regex_value": "^.*src ip = <(\\d[0-9]{0,3}\\.\\d[0-9]{0,3}\\.\\d[0-9]{0,3}\\.\\d[0-9]{0,3})"
+      },
+      "extractor_type": "regex",
+      "order": 0,
+      "source_field": "message",
+      "target_field": "VMwareMigrateSource",
+      "title": "VMware Migration Source IP"
+    },
+    {
+      "condition_type": "regex",
+      "condition_value": "^.*(Setting VMOTION info:)",
+      "converters": [],
+      "cursor_strategy": "copy",
+      "extractor_config": {
+        "regex_value": "^.*dest ip = <(\\d[0-9]{0,3}\\.\\d[0-9]{0,3}\\.\\d[0-9]{0,3}\\.\\d[0-9]{0,3})"
+      },
+      "extractor_type": "regex",
+      "order": 0,
+      "source_field": "message",
+      "target_field": "VMwareMigrateDestination",
+      "title": "VMware Migration Destination IP"
+    },
+    {
+      "condition_type": "regex",
+      "condition_value": "^.*(Current working directory:)",
+      "converters": [],
+      "cursor_strategy": "copy",
+      "extractor_config": {
+        "regex_value": "^.*Current working directory: (.*)"
+      },
+      "extractor_type": "regex",
+      "order": 0,
+      "source_field": "message",
+      "target_field": "vmWareWorkDir",
+      "title": "vmWare Working Directory"
+    }
+  ],
+  "version": "0.91.1"
+}
