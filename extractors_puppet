@@ -1,0 +1,43 @@
+{
+  "extractors": [
+    {
+      "condition_type": "regex",
+      "condition_value": "^.*(puppet-agent\\[\\d[0-9]{0,9}.*\\]: Finished catalog run in (\\d[0-9]{0,9}\\.[0-9]{0,9}) seconds)",
+      "converters": [
+        {
+          "config": {},
+          "type": "numeric"
+        }
+      ],
+      "cursor_strategy": "copy",
+      "extractor_config": {
+        "regex_value": "^.*puppet-agent\\[\\d[0-9]{0,9}.*\\]: Finished catalog run in ((\\d[0-9]{0,9}\\.[0-9]{0,9})) seconds"
+      },
+      "extractor_type": "regex",
+      "order": 0,
+      "source_field": "message",
+      "target_field": "puppetRunTime",
+      "title": "Puppet: Puppet run time"
+    },
+    {
+      "condition_type": "regex",
+      "condition_value": "^.*(puppet-agent\\[\\d[0-9]{0,9}.*\\]: Applying configuration version '(\\d[0-9]{0,9})')",
+      "converters": [
+        {
+          "config": {},
+          "type": "numeric"
+        }
+      ],
+      "cursor_strategy": "copy",
+      "extractor_config": {
+        "regex_value": "^.*puppet-agent\\[\\d[0-9]{0,9}.*\\]: Applying configuration version '(\\d[0-9]{0,9})'"
+      },
+      "extractor_type": "regex",
+      "order": 0,
+      "source_field": "message",
+      "target_field": "puppetConfigVersion",
+      "title": "Puppet: Puppet Configuration Version"
+    }
+  ],
+  "version": "0.91.1"
+}
