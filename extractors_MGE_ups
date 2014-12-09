@@ -1,0 +1,131 @@
+{
+  "extractors": [
+    {
+      "condition_type": "string",
+      "condition_value": "a bypass fault exists",
+      "converters": [],
+      "cursor_strategy": "copy",
+      "extractor_config": {
+        "regex_value": "^.*(A bypass fault exists)"
+      },
+      "extractor_type": "regex",
+      "order": 0,
+      "source_field": "message",
+      "target_field": "UPSmessage",
+      "title": "MGE: Bypass Fault"
+    },
+    {
+      "condition_type": "string",
+      "condition_value": "On battery power in response to an input power problem.",
+      "converters": [],
+      "cursor_strategy": "copy",
+      "extractor_config": {
+        "regex_value": "^.*(On battery power in response to an input power problem.)"
+      },
+      "extractor_type": "regex",
+      "order": 0,
+      "source_field": "message",
+      "target_field": "UPSmessage",
+      "title": "MGE: On Battery Power"
+    },
+    {
+      "condition_type": "string",
+      "condition_value": "Bypass input voltage is out of range.",
+      "converters": [],
+      "cursor_strategy": "copy",
+      "extractor_config": {
+        "regex_value": "^.*(Bypass input voltage is out of range.)"
+      },
+      "extractor_type": "regex",
+      "order": 0,
+      "source_field": "message",
+      "target_field": "UPSmessage",
+      "title": "MGE: Bypass Input Voltage out of Range"
+    },
+    {
+      "condition_type": "string",
+      "condition_value": "A phase out of range condition exists on the bypass input",
+      "converters": [],
+      "cursor_strategy": "copy",
+      "extractor_config": {
+        "regex_value": "^.*(A phase out of range condition exists on the bypass input.)"
+      },
+      "extractor_type": "regex",
+      "order": 0,
+      "source_field": "message",
+      "target_field": "UPSmessage",
+      "title": "MGE: Phase Out of Range on Bypass"
+    },
+    {
+      "condition_type": "string",
+      "condition_value": "Mains input voltage is out of range",
+      "converters": [],
+      "cursor_strategy": "copy",
+      "extractor_config": {
+        "regex_value": "^.*(Mains input voltage is out of range.)"
+      },
+      "extractor_type": "regex",
+      "order": 0,
+      "source_field": "message",
+      "target_field": "UPSmessage",
+      "title": "MGE: Mains Input Out of Range"
+    },
+    {
+      "condition_type": "string",
+      "condition_value": "Mains input is not available due to a fault condition.",
+      "converters": [],
+      "cursor_strategy": "copy",
+      "extractor_config": {
+        "regex_value": "^.*(Mains input is not available due to a fault condition.)"
+      },
+      "extractor_type": "regex",
+      "order": 0,
+      "source_field": "message",
+      "target_field": "UPSmessage",
+      "title": "MGE: Mains Input Not Available Due to Fault"
+    },
+    {
+      "condition_type": "string",
+      "condition_value": "Mains input frequency is out of range.",
+      "converters": [],
+      "cursor_strategy": "copy",
+      "extractor_config": {
+        "regex_value": "^.*(Mains input frequency is out of range.)"
+      },
+      "extractor_type": "regex",
+      "order": 0,
+      "source_field": "message",
+      "target_field": "UPSmessage",
+      "title": "MGE: Input Frequency Out of Range"
+    },
+    {
+      "condition_type": "string",
+      "condition_value": "The battery power is too low to continue to support the load; the UPS will go on bypass or shutdown if input power does not return to normal soon.",
+      "converters": [],
+      "cursor_strategy": "copy",
+      "extractor_config": {
+        "regex_value": "^.*(The battery power is too low to continue to support the load; the UPS will go on bypass or shutdown if input power does not return to normal soon.)"
+      },
+      "extractor_type": "regex",
+      "order": 0,
+      "source_field": "message",
+      "target_field": "UPSmessage",
+      "title": "MGE: Battery Almost Dead"
+    },
+    {
+      "condition_type": "string",
+      "condition_value": "End of battery runtime, no longer exists",
+      "converters": [],
+      "cursor_strategy": "copy",
+      "extractor_config": {
+        "regex_value": "^.*(End of battery runtime, no longer exists)"
+      },
+      "extractor_type": "regex",
+      "order": 0,
+      "source_field": "message",
+      "target_field": "UPSmessage",
+      "title": "MGE: End of Battery Runtime"
+    }
+  ],
+  "version": "0.91.1"
+}
